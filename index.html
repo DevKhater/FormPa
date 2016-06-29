@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Basic Page Needs
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<meta charset="utf-8">
+		<title>Your page title here :)</title>
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Mobile Specific Metas
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- FONT
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+		<!-- CSS
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/skeleton.css">
+		<link rel="stylesheet" href="css/countrySelect.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="validate.min.js"></script>
+
+		<!-- Favicon
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="icon" type="image/png" href="images/favicon.png">
+		<style type="text/css">
+			label {
+				display: inline-block;
+			}
+			#choice1{
+				height: 200px;
+				background-color: wheat;
+				border: 1px solid black;
+			}
+			#choice2{
+				height: 200px;
+				background-color: gray;
+				border: 1px solid black;
+			}
+
+			#choice1 p, #choice2 p {
+				line-height: 200px;
+				color: red;
+				text-align: center;
+				font-size: 20px;
+			}
+
+			.error_box {
+				color: red;
+				font-weight: 900;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- Primary Page Layout
+		–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div class="container">
+			<div class="row">
+				<div class="seven columns" style="margin-top: 25%">
+					<div id='choose_plan'>
+						<div id="student_number">
+							<label>Select Number of Students.</label>
+							<select id='numerOfStdents_dd'>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+							</select>
+						</div>
+						<div id='plan_change'>
+							<div class="six columns offer" id="choice1">
+								<p>  <span class="price">40</span> $ </p>
+							</div>
+							<div class="six columns offer" id="choice2">
+								<p>  <span class="price">90</span> $ </p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="three columns" style="margin-top: 25%">
+					<h5>Order Summary</h5>
+					<hr/>
+					<div class='order_item'>
+						<div class='six columns item'>
+							<p>Description<br/>
+								<span id='order_number_host'></span><br/>
+								<span id='order_selected_package'></span>
+							</p>
+						</div>
+						<div class="six columns total">
+							<span id= "total_ammount"></span>
+						</div>
+					</div>
+					<div class="twelve columns">
+					<hr/>
+						All amounts shown in <span id='country_currency'>U.S. dollars</span> </div>
+				</div>
+
+				<div class="seven columns" style="margin: 10px; padding: 20px:">
+					<div class="twelve columns">
+						<h4>Create your account </h4>
+						<div class="error_box twelve columns"></div>
+						<form  name="user_form" method="post" action="#">
+							<div class="twelve columns">
+								<div class="form-group">
+									<input id="password" name="password" maxlength="64" placeholder="Create your password here" class="form-control" type="password"  style="width:85%;">
+								</div>
+							</div>
+
+							<div class="five columns">
+								<div class="form-group">
+									<input id="fname" name="fname" maxlength="64" placeholder="First Name" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="six columns">
+								<div class="form-group">
+									<input id="lname" name="lname" maxlength="64" placeholder="Last Name" class="form-control" type="text">
+								</div>
+							</div>
+
+							<div class="five columns">
+								<div class="form-group">
+									<input id="address" name="address" maxlength="64" placeholder="Address" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="six columns">
+								<div class="form-group">
+									<input id="city" name="city" maxlength="64" placeholder="Town/City" class="form-control" type="text">
+								</div>
+							</div>
+
+							<div class="five columns">
+								<div class="form-group">
+									<input id="country" name="country" maxlength="64" placeholder="Country" class="form-control" type="text">
+									<script src="countrySelect.min.js"></script>
+									<script>
+										$("#country").countrySelect();
+									</script>
+								</div>
+							</div>
+
+							<div class="six columns">
+								<div class="form-group">
+									<input id="city" name="city" maxlength="64" placeholder="Town/City" class="form-control" type="text">
+								</div>
+							</div>
+
+							<div class="six columns">
+								<div class="form-group">
+									<input id="postal_code" name="postal_code" maxlength="64" placeholder="Postal Code / Zip" class="form-control" type="text">
+								</div>
+							</div>
+
+							<div class="six columns">
+								<div class="form-group">
+									<input id="phone" name="phone" maxlength="64" placeholder="Phone" class="form-control" type="text">
+								</div>
+							</div>
+							<div class="twelve columns">
+								<div class="form-group">
+									<input id="email" name="email" maxlength="64" placeholder="Email" class="form-control" type="email"   style="width:85%;">
+								</div>
+							</div>
+							<hr>
+						</form>
+					</div>
+				</div>
+
+
+
+				<div class="seven columns" style="margin: 10px; padding: 20px:">
+					<div class="twelve columns">
+						<h4>PayPal account </h4>
+						Pay Using Paypal
+						<p>Still API to be configured.</p>
+					</div>
+				</div>
+
+				<div class="twelve columns center">
+					<button id='all_form_submit' type="submit" value="Submit" >Submit</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="app.js"></script>
+
+		<!-- End Document
+		  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	</body>
+</html>
